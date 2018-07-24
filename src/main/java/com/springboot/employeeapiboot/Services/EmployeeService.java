@@ -9,8 +9,8 @@ public class EmployeeService {
     private ArrayList<Employee> employees;
     public EmployeeService(){
         this.employees=new ArrayList<>();
-        this.add(new Employee(1,"小明",20,"男"));
-        this.add(new Employee(2,"小红",20,"女"));
+        this.add(new Employee(1,"小明",20,"男",6000));
+        this.add(new Employee(2,"小红",20,"女",8000));
     }
 
     public ArrayList<Employee> getEmployees() {
@@ -51,7 +51,7 @@ public class EmployeeService {
     public ArrayList<Employee> put(int id, Employee employee) {
         for(int i=0;i<this.getEmployees().size();i++){
             if (this.getEmployees().get(i).getId()==id){
-                this.getEmployees().set(i,new Employee(id,employee.getName(),employee.getAge(),employee.getGender()));
+                this.getEmployees().set(i,new Employee(id,employee.getName(),employee.getAge(),employee.getGender(),employee.getSalary()));
             }
         }
         return this.getEmployees();

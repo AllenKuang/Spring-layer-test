@@ -17,7 +17,7 @@ public class EmployeeController{
     }
     @GetMapping("/employee")
     public Employee showEmployee(){
-        Employee employee1=new Employee(0,"小明",20,"男");
+        Employee employee1=new Employee(0,"小明",20,"男",6000);
         return employee1;
     }
     @Autowired

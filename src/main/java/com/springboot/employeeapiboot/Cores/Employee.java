@@ -7,16 +7,17 @@ public class Employee{
     private String name;
     private int age;
     private String gender;
-
+    private long salary;
     public Employee(){      //缺少无参构造函数会导致一个错误在put的时候：Cannot construct instance of `...Employee`
 
     }
 
-    public Employee(int id,String name,int age,String gender){
+    public Employee(int id,String name,int age,String gender,long salary){
         this.id=id;
         this.name=name;
         this.age=age;
         this.gender=gender;
+        this.salary=salary;
     }
 
     public int getId() {
@@ -52,4 +53,11 @@ public class Employee{
     }
 
 
+    public long getSalary() {
+        return salary;
+    }
+
+    public void setSalary(long salary) {
+        this.salary = salary;
+    }
 }
