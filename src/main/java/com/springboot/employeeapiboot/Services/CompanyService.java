@@ -1,6 +1,7 @@
 package com.springboot.employeeapiboot.Services;
 
 import com.springboot.employeeapiboot.Cores.Company;
+import com.springboot.employeeapiboot.Cores.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -55,5 +56,14 @@ public class CompanyService {
             }
         }
         return this.companies;
+    }
+
+    public ArrayList<Employee> getCompanyEmployee(int id) {
+        for(Company company:this.companies){
+            if(id==company.getId()){
+                return company.getEmployees();
+            }
+        }
+        return null;
     }
 }

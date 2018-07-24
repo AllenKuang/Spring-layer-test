@@ -29,6 +29,10 @@ public class CompanyController {
     public Company getCompanyById(@PathVariable int id){
         return companyService.getCompanyById(id);
     }
+    @GetMapping("/{id}/employees")
+    public ArrayList<Employee> getCompanyEmployee(@PathVariable int id){
+        return companyService.getCompanyEmployee(id);
+    }
     @PostMapping("")
     public ArrayList<Company> postCompany(@RequestBody Company company){
         return companyService.addCompany(company);
@@ -41,4 +45,5 @@ public class CompanyController {
     public ArrayList<Company> deleteCompany(@PathVariable int id,@RequestBody Company company){
         return companyService.deleteCompany(id,company);
     }
+
 }
