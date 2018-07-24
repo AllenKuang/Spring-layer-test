@@ -66,4 +66,12 @@ public class CompanyService {
         }
         return null;
     }
+
+    public ArrayList<Company> getCompaniesByPageAndPageSize(int page, int pageSize) {
+        ArrayList<Company> tempCompanies=new ArrayList<>();
+        for(int i=page-1;i<pageSize;i++){
+            tempCompanies.add(this.getCompanies().get(i));
+        }
+        return tempCompanies;
+    }
 }

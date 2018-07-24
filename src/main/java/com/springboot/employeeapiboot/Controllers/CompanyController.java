@@ -33,6 +33,10 @@ public class CompanyController {
     public ArrayList<Employee> getCompanyEmployee(@PathVariable int id){
         return companyService.getCompanyEmployee(id);
     }
+    @GetMapping("/page/{page}/pageSize/{pageSize}")
+    public ArrayList<Company> getCompaniesByPageAndPageSize(@PathVariable int page,@PathVariable int pageSize){
+        return companyService.getCompaniesByPageAndPageSize(page,pageSize);
+    }
     @PostMapping("")
     public ArrayList<Company> postCompany(@RequestBody Company company){
         return companyService.addCompany(company);
