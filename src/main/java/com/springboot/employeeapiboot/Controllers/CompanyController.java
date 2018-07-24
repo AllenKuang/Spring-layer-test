@@ -37,5 +37,8 @@ public class CompanyController {
     public Company putCompany(@PathVariable int id,@RequestBody Company company){
         return companyService.updateCompany(id,company);
     }
-
+    @DeleteMapping("/{id}")
+    public ArrayList<Company> deleteCompany(@PathVariable int id,@RequestBody Company company){
+        return companyService.deleteCompany(id,company);
+    }
 }

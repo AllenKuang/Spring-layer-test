@@ -46,4 +46,14 @@ public class CompanyService {
         }
         return null;
     }
+
+    public ArrayList<Company> deleteCompany(int id, Company deleteCompany) {
+        for(int i=0;i<this.companies.size();i++){
+            if(id==this.companies.get(i).getId()){
+                this.companies.get(i).getEmployees().clear();
+                this.companies.remove(i);
+            }
+        }
+        return this.companies;
+    }
 }
