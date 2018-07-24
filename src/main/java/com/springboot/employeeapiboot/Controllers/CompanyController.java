@@ -33,9 +33,9 @@ public class CompanyController {
     public ArrayList<Company> postCompany(@RequestBody Company company){
         return companyService.addCompany(company);
     }
-//    @PutMapping("{/id}")
-//    public ArrayList<Company> putCompany(@PathVariable long id,@RequestBody Company company){
-//        return companyService.updateCompany(id,company);
-//    }
+    @PutMapping("/{id}")
+    public Company putCompany(@PathVariable int id,@RequestBody Company company){
+        return companyService.updateCompany(id,company);
+    }
 
 }

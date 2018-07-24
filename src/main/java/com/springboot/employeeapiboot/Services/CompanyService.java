@@ -37,7 +37,13 @@ public class CompanyService {
         return null;
     }
 
-//    public ArrayList<Company> updateCompany(long id, Company company) {
-//
-//    }
+    public Company updateCompany(long id, Company putcompany) {
+        for(Company company:this.getCompanies()){
+            if(company.getId()==id){
+                company=putcompany;
+                return putcompany;
+            }
+        }
+        return null;
+    }
 }
