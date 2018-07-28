@@ -20,11 +20,14 @@ public class Company {
     private ZonedDateTime createDate=ZonedDateTime.now();
 
    // private ArrayList<Employee> employees;
-    public Company(Long id,String name){
-       this.id=id;
+    public Company(String name){
+       //this.id=id;
         this.name=name;
     }
-
+    public Company(Long id,String name){
+        this.id=id;
+        this.name=name;
+    }
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "company",fetch=FetchType.LAZY)
     private List<Employee> employees=new ArrayList<>();
     public Company(){
