@@ -35,16 +35,23 @@ public class CompanysController {
     }
     @Transactional
     @PostMapping(path="")
-    public Company addOneCompany(@RequestBody Company company){
-        return companyService.addOneCompany(company);
+    public ResponseEntity addOneCompany(@RequestBody Company company){
+         if(companyService.addOneCompany(company)){
+             return ResponseEntity.status(HttpStatus.CREATED).build();
+         }
+         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
     @Transactional
-    @PutMapping("/{id}")
-    public Company modifyCompanyById(@RequestBody Company company){
-        return companyService.modifyCompanyById(company);
+    @PutMapping(path="/{id}")
+    public ResponseEntity modifyCompanyById(@RequestBody Company company){
+         if(companyService.modifyCompanyById(company)){
+             return ResponseEntity.noContent().build();
+         }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteCompanyById(@PathVariable long id){
+    @Transactional
+    @DeleteMapping(path="/{id}")
+    public ResponseEntity deleteCompanyById(@PathVariable Long id){
         if(companyService.deleteCompanyById(id)){
             return ResponseEntity.ok().build();
         }

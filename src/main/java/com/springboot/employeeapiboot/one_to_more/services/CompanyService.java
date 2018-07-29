@@ -22,20 +22,22 @@ public class CompanyService {
        return  companyRepository.findAll();
     }
 
-    public Company addOneCompany(Company company) {
+    public boolean addOneCompany(Company company) {
         company.getEmployees().stream().forEach(employee ->{
             employee.setCompany(company);
         });
-        return companyRepository.save(company);
+        companyRepository.save(company);
+        return true;
     }
 
-    public Company modifyCompanyById(Company company) {
+    public boolean modifyCompanyById(Company company) {
         company.getEmployees().stream().filter(employee -> employee.getCompany() == null).forEach(employee -> {
             employee.setCompany(company);});
-        return companyRepository.save(company);
+         companyRepository.save(company);
+        return true;
     }
 
-    public boolean deleteCompanyById(long id) {
+    public boolean deleteCompanyById(Long id) {
         //Company company=companyRepository.findById(id).get();
         int deleteCompanyById=companyRepository.deleteCompanyById(id);
         return deleteCompanyById!=0;
