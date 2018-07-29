@@ -7,7 +7,7 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Table(name="company")
+@Table(name="company")
 @Entity
 public class Company {
     @Id

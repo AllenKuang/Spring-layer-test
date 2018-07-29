@@ -1,7 +1,5 @@
-CREATE TABLE company
-(
-id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
---id int AUTO_INCREMENT,
-name varchar(255),
-create_date Date,
-)
+CREATE TABLE company (
+    `id`              BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name`            VARCHAR(55) NOT NULL,
+    `create_date`     TIMESTAMP DEFAULT NOW()
+);
