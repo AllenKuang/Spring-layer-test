@@ -1,14 +1,14 @@
 language:java
-jdk:
+ jdk:
   - oraclejdk8
-  notifications:  
+ notifications:  
   
-      email: false  
+  email: false  
   
-    install:  
+ install:  
   
-      - chmod +x ./gradlew  
+   - chmod +x ./gradlew  
   
-      - ./gradlew --info assemble  
+   - ./gradlew --info assemble  
   
-  script: ./gradlew --info check 
+ script: ./gradlew --info check 
